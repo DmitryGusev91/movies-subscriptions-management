@@ -1,0 +1,31 @@
+		###IMPORTANT REMARKS ABOUT THE PROJECT###
+-------------------------------------------------------------------------------------
+* in "server" , in the package.js need to put :
+
+  "nodemonConfig": {
+    "ignore": [
+      "./data/users.json",
+      "./data/permissions.json"
+    ]
+
+for nodemon ot ignore those json files and not to restarts itself infinitly
+
+-----------------------------------------------------------------------------------
+* NO NEED to enter data manualy , on FIRST RUN it will create a user admin and automaticly
+create everything that need to be created with the movies and subscriptions.
+
+---------------------------------------------------------------------------------------
+
+* Have an Environment variable in folder server that contains the toke that will be used for 
+auth users
+-----------------------------------------------------------------------------------------
+		Order Of running program
+		==========================
+1) cd .\subscriptionsServer\
+   nodemon .\index.js
+
+2) cd .\server\
+   nodemon .\index.js
+
+3) cd .\client\
+   npm run dev
