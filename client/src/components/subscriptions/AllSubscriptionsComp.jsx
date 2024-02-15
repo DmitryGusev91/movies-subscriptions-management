@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import Sub from "./SubscriptionComp";
 import { useNavigate } from "react-router-dom";
 
-const subsUrl = "/members";
+const subsUrl = "/subscriptions/members";
 const moviesUrl = "/movies";
 const membersURL = "/members";
 const subscriptionUrl = "/subscriptions";
