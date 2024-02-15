@@ -47,6 +47,11 @@ const getAllUsersData = async () => {
   }
 };
 
+const userAmount=async()=>{
+const users= await User.find({});
+  return users.length;
+}
+
 //returns user and his permissions
 const getUserData = async (id) => {
   try {
@@ -170,5 +175,5 @@ module.exports = {
   getAllUsersData,
   updateUsersData,
   deleteUsersData,
-  addUsersData,
+  addUsersData,userAmount,
 };
