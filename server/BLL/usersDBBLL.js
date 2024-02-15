@@ -6,6 +6,10 @@ const updateUser = async (id, obj) => {
   return "Updated!";
 };
 
+const getAllUsers=async()=>{
+  return User.find({});
+}
+
 const verifyUser = async (name) => {
   const user = await User.findOne({ name });
   if (!user) {
@@ -23,4 +27,4 @@ const checkNewUser = async (name) => {
   return user;
 };
 
-module.exports = { updateUser, verifyUser, checkNewUser };
+module.exports = { getAllUsers,updateUser, verifyUser, checkNewUser };
