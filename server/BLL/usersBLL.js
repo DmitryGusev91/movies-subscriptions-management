@@ -139,30 +139,30 @@ const addUsersData = async (obj) => {
   const userDB = new User({ name: obj.userName });
   await userDB.save();
 
-  const users = await usersFile.getUsers();
-  const permissions = await permFile.getPermissions();
-  const user = {
-    _id: userDB._id,
-    firstName: obj.firstName,
-    lastName: obj.lastName,
-    createdDate: obj.createdDate,
-    sessionTimeOut: obj.sessionTimeOut,
-  };
+//  const users = await usersFile.getUsers();
+//  const permissions = await permFile.getPermissions();
+//  const user = {
+ //   _id: userDB._id,
+  //  firstName: obj.firstName,
+ //   lastName: obj.lastName,
+ //   createdDate: obj.createdDate,
+ //   sessionTimeOut: obj.sessionTimeOut,
+//  };
 
-  const truePermissionsArray = Object.keys(obj.permission)
-    .filter((permission) => obj.permission[permission])
-    .map((permission) => permission.replace(/([a-z])([A-Z])/g, "$1 $2"));
+ // const truePermissionsArray = Object.keys(obj.permission)
+  //  .filter((permission) => obj.permission[permission])
+  //  .map((permission) => permission.replace(/([a-z])([A-Z])/g, "$1 $2"));
 
-  const permission = {
-    _id: String(userDB._id),
-    permission: truePermissionsArray,
-  };
+//  const permission = {
+ //   _id: String(userDB._id),
+//    permission: truePermissionsArray,
+//  };
 
-  await usersFile.setUsers([...users, user]);
+//  await usersFile.setUsers([...users, user]);
 
-  await permFile.setPermissions([...permissions, permission]);
+ // await permFile.setPermissions([...permissions, permission]);
 
-  return userDB._id;
+ // return userDB._id;
 };
 
 module.exports = {
