@@ -5,7 +5,7 @@ import Sub from "./SubscriptionComp";
 import { useNavigate } from "react-router-dom";
 
 const subsUrl = "/subscriptions/members";
-const moviesUrl = "/movies";
+const moviesUrl = "subscriptions/movies";
 const membersURL = "/members";
 const subscriptionUrl = "/subscriptions";
 
