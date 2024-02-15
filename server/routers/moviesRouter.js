@@ -8,17 +8,18 @@ const ACCESS_SECRET_TOKEN = process.env.ACCESS_SECRET_TOKEN;
 router.get("/", async (req, res) => {
   try {
     const token = req.headers["x-access-token"];
+    console.log("flag token");
     if (!token) {
       return res.status(401).json("No token provided");
     }
-    
+    console.log("flag after token in router movies");
     jwt.verify(token, ACCESS_SECRET_TOKEN, async (err, data) => {
       if (err) {
   
         return res.status(500).json("Failed to authenticate token");
         
       }
-
+console.log("flag before router movies");
       const movie = await moviesBLL.getAllMovies();
       console.log("flag in router movies");
       res.send(movie);
