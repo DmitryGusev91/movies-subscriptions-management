@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import axios from "axios";
 
-const URL = "http://localhost:8000/members";
+const URL = "/members";
 
 
 function AddEditSub() {

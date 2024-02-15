@@ -1,6 +1,7 @@
 const axios = require("axios");
+require("dotenv").config();
 
-const urlMember = "http://localhost:3000/members";
+const urlMember = `${process.env.MOVIES_SERVER}/members`;
 
 const getByIDMember = (id) => {
   return axios.get(`${urlMember}/${id}`);

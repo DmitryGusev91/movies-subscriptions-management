@@ -4,7 +4,7 @@ import axios from "axios";
 import User from "./UserComp";
 import { useNavigate } from "react-router-dom";
 
-const usersUrl = "http://localhost:8000/users";
+const usersUrl = "/users";
 
 
 function AllUsers() {

@@ -4,10 +4,10 @@ import { useSelector } from "react-redux";
 import Sub from "./SubscriptionComp";
 import { useNavigate } from "react-router-dom";
 
-const subsUrl = "http://localhost:8000/subscriptions/members";
-const moviesUrl = "http://localhost:8000/subscriptions/movies";
-const membersURL = "http://localhost:8000/members";
-const subscriptionUrl = "http://localhost:8000/subscriptions";
+const subsUrl = "/members";
+const moviesUrl = "/movies";
+const membersURL = "/members";
+const subscriptionUrl = "/subscriptions";
 
 
 function AllSubs() {

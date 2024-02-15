@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 
-const registerURL = "http://localhost:8000/auth/register";
+const registerURL = "/auth/register";
 
 function Register() {
   const navigate = useNavigate();

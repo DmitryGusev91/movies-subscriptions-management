@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import axios from "axios";
 import Movie from "./MovieComp";
 
-const moviesUrl = "http://localhost:8000/subscriptions/movies";
+const moviesUrl = "/subscriptions/movies";
 
 function AllMovies() {
   const [movies, setMovies] = useState([]);

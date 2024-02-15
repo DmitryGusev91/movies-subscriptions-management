@@ -2,8 +2,8 @@ import { useNavigate, Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
-const loginURL = "http://localhost:8000/auth/login";
-const userURL = "http://localhost:8000/users";
+const loginURL = "/auth/login";
+const userURL = "/users";
 function Login() {
   const navigate = useNavigate();
   const [user, setUser] = useState({ name: "", password: "" });

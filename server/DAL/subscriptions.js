@@ -1,10 +1,11 @@
 const axios = require("axios");
+require("dotenv").config();
 
-const urlSub = "http://localhost:3000/subscriptions";
+const urlSub = `${process.env.MOVIES_SERVER}/subscriptions`;
 
-const getSubs=(filters)=>{
-  return axios.get(urlSub,{params:filters});
-}
+const getSubs = (filters) => {
+  return axios.get(urlSub, { params: filters });
+};
 
 const addSub = async (obj) => {
   await axios.post(urlSub, obj);
@@ -21,17 +22,15 @@ const deleteSub = async (id) => {
   return "Deleted!";
 };
 
-const getMovieAndMembers = async() => {
-  const {data}= await axios.get(`${urlSub}/movies`);
+const getMovieAndMembers = async () => {
+  const { data } = await axios.get(`${urlSub}/movies`);
   return data;
 };
 
-const getMemberAndMovies = async() => {
-  const {data}= await axios.get(`${urlSub}/subscriptions`);
+const getMemberAndMovies = async () => {
+  const { data } = await axios.get(`${urlSub}/subscriptions`);
   return data;
 };
-
-
 
 module.exports = {
   addSub,
@@ -39,5 +38,5 @@ module.exports = {
   deleteSub,
   getMovieAndMembers,
   getMemberAndMovies,
-  getSubs
+  getSubs,
 };

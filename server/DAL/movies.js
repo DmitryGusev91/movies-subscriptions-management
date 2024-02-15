@@ -1,7 +1,7 @@
 const axios = require("axios");
+require("dotenv").config();
 
-const urlMovie = "http://localhost:3000/movies";
-
+const urlMovie = `${process.env.MOVIES_SERVER}/movies`;
 
 const getAllMovies = () => {
   return axios.get(urlMovie);
@@ -25,4 +25,10 @@ const deleteMovie = async (id) => {
   await axios.delete(`${urlMovie}/${id}`);
   return "Deleted!";
 };
-module.exports = { getAllMovies,addMovie, updateMovie, getByIDMovie, deleteMovie };
+module.exports = {
+  getAllMovies,
+  addMovie,
+  updateMovie,
+  getByIDMovie,
+  deleteMovie,
+};

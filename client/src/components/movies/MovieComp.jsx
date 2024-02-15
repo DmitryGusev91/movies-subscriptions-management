@@ -2,7 +2,7 @@ import MovieMembers from "./MovieMembersComp";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const URL = "http://localhost:8000/movies";
+const URL = "/movies";
 
 function Movie({ movie, deleteMovie, permission }) {
   const navigate = useNavigate();
