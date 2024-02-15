@@ -42,6 +42,10 @@ app.listen(port, () => {
 
   //initialize in the DB admin login on the first run of the server
   const initAdmin = async () => {
+    const allUsers=await usersBLL.getAllUsersData();
+    if(allUsers.length===0){
+  return 0;
+    }
     const saltRounds = 10;
     const hashedPassword = await bcrypt.hash("admin", saltRounds);
     const id = await usersBLL.addUsersData({
