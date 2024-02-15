@@ -29,6 +29,9 @@ app.listen(port, () => {
 
   //initialize in the DB the movies and the members on the first run of the server
   const initData = async () => {
+    const allMovies=await moviesBLL.getAllMovies();
+    if(allMovies.length===0){
+      return 0;}
     const members = await membersDAL.getAllMembers();
     const movies = await moviesDAL.getAllMovies();
     moviesBLL.initMovies(movies.data);
