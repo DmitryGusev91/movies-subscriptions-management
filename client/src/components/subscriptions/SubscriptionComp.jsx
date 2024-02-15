@@ -3,7 +3,8 @@ import { useNavigate } from "react-router-dom";
 
 function Sub({ sub, deleteSubs, movies, addMovie, permission }) {
   const navigate = useNavigate();
-
+console.log(sub)
+  console.log(permission)
   const handlerDeleteMember = () => {
     deleteSubs(sub._id);
   };
