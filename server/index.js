@@ -1,7 +1,8 @@
 const express = require("express");
 const cors = require("cors");
 const bcrypt = require("bcrypt");
-const connectDB = require("./configs/db");
+const mongoose = require("mongoose");
+const path = require("path");
 
 const usersDBRouter = require("./routers/usersDBRouter");
 const usersRouter = require("./routers/usersRouter");
@@ -16,10 +17,14 @@ const usersDBBLL = require("./BLL/usersDBBLL");
 const app = express();
 const port = 8000;
 
-connectDB();
+const mongoKey =
+  "mongodb+srv://admin:5JKCeWP4QdF5t7Hy@movieusersdb.fv95kmh.mongodb.net/?retryWrites=true&w=majority";
+mongoose.connect(mongoKey);
 
 app.use(cors());
 app.use(express.json());
+
+app.use(express.static(path.join(__dirname, "../client/dist/")));
 
 app.use("/auth", authRouter);
 app.use("/userspass", usersDBRouter);
@@ -27,6 +32,10 @@ app.use("/users", usersRouter);
 app.use("/members", membersRouter);
 app.use("/movies", moviesRouter);
 app.use("/subscriptions", subsRouter);
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/dist/index.html"));
+});
 
 app.listen(port, () => {
   console.log(`app is listening at http://localhost:${port}`);
