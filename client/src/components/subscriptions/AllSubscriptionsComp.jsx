@@ -50,7 +50,8 @@ const navigate=useNavigate()
     getAllSubs();
 
     getAllMovies();
-
+  console.log(subs)
+    console.log(movies)
   }, []);
 
   //deletes sub from server and from client side
