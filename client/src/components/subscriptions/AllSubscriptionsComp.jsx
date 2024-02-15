@@ -20,10 +20,13 @@ const navigate=useNavigate()
   useEffect(() => {
     const getAllSubs = async () => {
       try {
+        console.log("flag00")
         const { data } = await axios.get(subsUrl, {
           headers: { "x-access-token": sessionStorage.getItem("accessToken") },
         });
+        console.log("flag0")
         setSubs(data);
+        console.log("flag1")
       } catch (err) {
         navigate("/");
       }
@@ -31,17 +34,22 @@ const navigate=useNavigate()
 
     const getAllMovies = async () => {
       try {
+        console.log("flag3")
         const { data } = await axios.get(moviesUrl, {
           headers: { "x-access-token": sessionStorage.getItem("accessToken") },
         });
+        console.log("flag4")
         setMovies(data);
+        console.log("flag5")
       } catch (err) {
         navigate("/");
       }
     };
-
+console.log("flag6")
     getAllSubs();
+    console.log("flag7")
     getAllMovies();
+    console.log("flag8")
   }, []);
 
   //deletes sub from server and from client side
