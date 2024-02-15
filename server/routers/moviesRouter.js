@@ -22,6 +22,7 @@ router.get("/", async (req, res) => {
 console.log("flag before router movies");
       const movie = await moviesBLL.getAllMovies();
       console.log("flag in router movies");
+      console.log(movie);
       res.send(movie);
     });
   } catch (error) {
