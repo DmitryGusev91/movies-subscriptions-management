@@ -20,6 +20,7 @@ router.get("/", async (req, res) => {
       }
 
       const movie = await moviesBLL.getAllMovies();
+      console.log("flag in router movies");
       res.send(movie);
     });
   } catch (error) {
